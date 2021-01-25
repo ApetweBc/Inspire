@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/onsenui/css/onsenui.css">
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+        <link rel="stylesheet" href="css/custom.css">
+        <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">  
+
+        <title>Inspire Your Beauty</title>
+    </head>
+    <body>
+      
+      <ons-navigator id="myNavigator" page="home-page">
+        <ons-page id="home-page" style="padding-top: 20px;">
+          
+               <ons-toolbar modifier=" cover-content no-shadow" style="background-color: rgb(225, 166, 206);">
+                <div class="center" style="color: #ffffff;;">Inspire</div>
+                <div class="right">
+                  <ons-toolbar-button id="home-button"> 
+                      <ons-icon icon="md-home"></ons-icon>
+                  </ons-toolbar-button>
+              </div>
+              </ons-toolbar>
+           
+        
+          <div style="text-align: center; margin-top: 20px;">
+              <ons-search-input input-id="homeSearch" placeholder="Search Lipstic Brand"></ons-search-input>
+            </div>
+            <!-- <button id="push">Push</button> -->
+            <div id="list-item">
+
+            </div>
+      </ons-page>
+      </ons-navigator>     
+   
+       <!--  Makeup -->
+<template id="makeup">
+    <ons-page id="makeup-page"style="padding-top: 20px;">
+      <ons-toolbar style="background-color: rgb(225, 166, 206);">
+        <div class="left">
+          <ons-back-button>Back</ons-back-button>
+        </div>
+      </ons-toolbar>
+      <ons-card> 
+       
+        <div class="section-headers"> <h3>Overview</h3> </div>
+        <div id="makeupList">
+  
+        </div>
+
+        <div id="">
+               <h4 class="text-lg">Products related to this item</h4>
+            <hr>
+              <div id="description">
+
+              </div>
+        </div>
+       
+      </ons-card>
+    </ons-page>
+  </template>
+  
+   <!-- ******************** spinner modal ******************** -->
+   <ons-modal id="spinner-modal">
+    <div style="margin: auto;">
+        <ons-icon icon="md-spinner" size="100px" spin></ons-icon>              
+    </div>
+   </ons-modal>
+
+  <script src="js/eyeshadow.js">
+
+  </script>
+
+
+  <script>
+    ons.ready(function(){
+  // Tabber label change 
+   document.addEventListener('prechange', function (event) {
+      document.querySelector('ons-toolbar .center')
+        .innerHTML = event.tabItem.getAttribute('label');
+    });
+
+    });
+
+    document.querySelector('#home-button').onclick = function() {                    
+                window.location = './index.html';
+            }; 
+  </script>
+    </body>
+</html>

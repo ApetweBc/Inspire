@@ -1,0 +1,38 @@
+.product-images{
+    width: 40px !important;
+}
+
+.overview-images{
+    width: 100% !important;
+}
+
+.price{
+    margin: 10px 0;
+}
+
+
+.button-buy{
+    margin: 10px 0;
+}
+
+
+
+.button--material{
+    background: #d63e9094 !important;
+}
+/* .card{
+    padding: 5px 0px !important;
+} */
+
+.page__background, .page--material__background{
+
+    background-color: rgb(205, 205, 205) !important;
+}
+
+.toolbar-button--material{
+    color: #b32d8f !important;
+}
+
+.back-button--material__icon{
+    fill: #e51e1e !important;
+}

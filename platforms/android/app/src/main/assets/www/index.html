@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/onsenui/css/onsenui.css">
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+        <link rel="stylesheet" href="css/custom.css">
+        <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">  
+        <title>Inspire Your Beauty</title>
+    </head>
+    <body>
+   
+        <ons-page id="home-page" style="padding-top: 20px;" >
+          
+               <!-- <ons-toolbar modifier=" cover-content no-shadow" class="bg-pink-400 text-center">
+                   Inspire
+              </ons-toolbar> -->
+
+              <div style="text-align: center; margin: 10px 0;">
+                <ons-search-input  placeholder="Search"
+                onchange="ons.notification.alert('Your Searched for: ' + this.value + ' is out of stock')"> </ons-search-input>
+               
+               </div>
+               <hr>
+         <ons-card  class="py-6 bg-white shadow text-black">
+          <p>When it comes to serving face, we’ve got you covered. Whether you have a favorite brand or need help finding the perfect match, Inspire is your No.1 destination for everything beauty.</p>
+        </ons-card>
+             
+
+           <div style="text-align:center">
+
+            <ons-card>
+               
+              <div class="">
+                <p class="text-lg">Beauty Brands</p>
+              </div>
+
+              <div class="my-6">
+                <ons-button data-src="blush.html" onclick="navEye()" modifier="large" class="bg-pink-300">Blush</ons-button>
+                
+              </div>
+              <div class="my-6">
+                <ons-button data-src="eyeliner.html" onclick="navEye()" modifier="large" class="bg-pink-300">Eye liner</ons-button>
+              </div>
+              
+              <div class="my-6">
+                <ons-button data-src="eyebrows.html" onclick="navEye()" modifier="large" class="bg-pink-300">Eye Brow</ons-button>
+                
+              </div>
+              
+              <div class="my-6">
+                <ons-button data-src="eyeshadow.html" onclick="navEye()" modifier="large" class="bg-pink-300">Eye Shadow</ons-button>
+                
+              </ons-card>
+              </div>
+
+              <div class="mb-3">
+                <p class="text-lg">Brands List</p>
+              </div>
+              <div class="grid grid-cols-3">
+               
+                <div>
+                  <li>
+                    almay
+                  </li>
+                  <li>
+                    marienatie
+                  </li>
+                  <li>
+                    maybelline
+                  </li>
+                  <li>
+                    mineral fusion
+                  </li>
+                </div>
+                
+              
+                <div>
+                  <li>
+                    rejuva minerals
+                  </li>
+                  <li>
+                    revlon
+                  </li>
+                  <li>
+                    salon perfect
+                  </li>
+                  <li>
+                    dr. hauschka
+                  </li>
+                </div>
+                
+                <div>
+                  <li>
+                    china glaze
+                  </li>
+                  <li>
+                    clinique
+                  </li>
+                  <li>
+                    l'oreal
+                  </li>
+                  <li>
+                    orly
+                  </li>
+                </div>
+                </div>
+            
+           </ons-page>
+       
+
+  <!-- <script src="js/home.js"> -->
+  </body>
+  </script>
+
+
+  <script>
+    ons.ready(function(){
+  // Tabber label change 
+   document.addEventListener('prechange', function (event) {
+      document.querySelector('ons-toolbar .center')
+        .innerHTML = event.tabItem.getAttribute('label');
+    });
+
+    });
+
+    function navEye(target){
+                window.location = event.target.getAttribute('data-src');
+            }   
+
+
+  </script>
+   
+</html>
